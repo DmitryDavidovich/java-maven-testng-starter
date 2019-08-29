@@ -7,7 +7,8 @@ public class HomeTest extends AbstractTest {
 
   @Test
   public void verifyTitle () {
-    Assert.assertEquals(page.getTitle(), "QualityWorks Consulting Group | Software Consulting Firm", "Testing if title is QualityWorks Consulting Group");
+    String titleToFind = System.getProperty("title");
+    Assert.assertEquals(page.getTitle(), titleToFind, "Testing if the title of url is correct");
   }
 
 }

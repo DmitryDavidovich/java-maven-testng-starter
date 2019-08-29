@@ -12,16 +12,11 @@ import com.qualityworkscg.pages.Page;
 public abstract class  AbstractTest {
   
   protected static Page page;
-  private String url = System.getProperty("URL");
+
   
   @BeforeTest
-  // @Parameters({"url"})
   public void setup() {
-    // Set the path to the geckodriver
-    //System.setProperty("webdriver.gecko.driver", "./drivers/geckodriver");
-    
-    // Instantiate a new Page and navigate 
-    // to the url specified in the testng.xml
+    String url = System.getProperty("url");
     page = new Page(new ChromeDriver());
     page.navigate(url);
   }

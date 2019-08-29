@@ -5,6 +5,12 @@
   <version>0.0.1</version>
   <name>java_maven_testng_starter</name>
   <description>Java, Maven, TestNg starter project</description>
+
+    <properties>
+        <url></url>
+        <title></title>
+    </properties>
+
   <build>
     <sourceDirectory>src</sourceDirectory>
     <plugins>
@@ -21,10 +27,16 @@
 	    <artifactId>maven-surefire-plugin</artifactId>
 	    <version>2.20</version>
 	    <configuration>
-            <systemPropertyVariables>
-                <url>${env.URL}</url>
-                <title>${env.TITLE}</title>
-            </systemPropertyVariables>
+            <properties>
+                <property>
+                    <name>url</name>
+                    <value>${url}</value>
+                </property>
+                <property>
+                    <name>title</name>
+                    <value>${title}</value>
+                </property>
+            </properties>
 	    	  <suiteXmlFiles>
 	    	    <suiteXmlFile>testng.xml</suiteXmlFile>
 	    	  </suiteXmlFiles>
