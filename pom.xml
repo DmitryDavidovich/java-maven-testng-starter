@@ -21,6 +21,10 @@
 	    <artifactId>maven-surefire-plugin</artifactId>
 	    <version>2.20</version>
 	    <configuration>
+            <systemPropertyVariables>
+                <url>${env.URL}</url>
+                <title>${env.TITLE}</title>
+            </systemPropertyVariables>
 	    	  <suiteXmlFiles>
 	    	    <suiteXmlFile>testng.xml</suiteXmlFile>
 	    	  </suiteXmlFiles>
