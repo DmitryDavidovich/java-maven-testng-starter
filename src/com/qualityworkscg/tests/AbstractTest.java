@@ -16,8 +16,9 @@ public abstract class  AbstractTest {
   
   @BeforeTest
   public void setup() {
+      String url = System.getProperty("url");
     page = new Page(new ChromeDriver());
-    page.navigate("https://ya.ru");
+    page.navigate(url);
   }
 
   @AfterTest
